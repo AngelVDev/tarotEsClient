@@ -1,18 +1,21 @@
 import React, { useState } from "react";
 import DownArrow from "../../assets/DownArrow";
+import useStore from "../../store/store";
 
+const palosPath = "https://tarotapispanish.onrender.com/api/v1/cards/suits";
 const palos = [
   {
     name: "Oros",
-    path: "/",
+    path: palosPath + "/oros",
   },
-  { name: "Bastos", path: "/" },
-  { name: "Espadas", path: "/" },
-  { name: "Copas", path: "/" },
+  { name: "Bastos", path: palosPath + "/bastos" },
+  { name: "Espadas", path: palosPath + "/espadas" },
+  { name: "Copas", path: palosPath + "/copas" },
 ];
 
 function Palos() {
   const [showMenu, setShowMenu] = useState(false);
+  const { fetchData } = useStore();
 
   return (
     <div className='relative'>
@@ -42,15 +45,15 @@ function Palos() {
             aria-labelledby='options-menu'
           >
             {palos.map((palo) => (
-              <a
+              <button
                 key={palo.name}
-                href={palo.path}
                 className='px-4 py-2 text-sm
                 text-gray-700 dark:text-gray-100 hover:bg-[#c068ff86]'
                 role='menuitem'
+                onClick={() => fetchData(palo.path)}
               >
                 {palo.name}
-              </a>
+              </button>
             ))}
           </li>
         </ul>
