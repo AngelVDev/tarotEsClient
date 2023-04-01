@@ -21,8 +21,7 @@ function Corte() {
         type='button'
         className='inline-flex items-center justify-center w-full 
         h-16 px-4 text-sm font-medium text-gray-700 dark:text-gray-100 
-        bg-transparent rounded-md hover:bg-gray-100 focus:outline-none 
-        focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
+        bg-transparent rounded-md hover:bg-[#c068ff86]'
         onMouseEnter={() => setShowMenu(true)}
       >
         Corte
@@ -31,7 +30,9 @@ function Corte() {
       {showMenu && (
         <ul
           id='dropdownHover'
-          className='absolute right-0 z-10 w-40 py-1 mt-2 overflow-hidden 
+          onMouseDown={() => setShowMenu(true)}
+          onMouseLeave={() => setTimeout(() => setShowMenu(false), 50)}
+          className='absolute transition-all z-10 p-1 mt-2 overflow-hidden 
           bg-white rounded-md shadow-lg dark:bg-gray-800 ring-1 ring-black ring-opacity-5'
         >
           <li
@@ -44,9 +45,8 @@ function Corte() {
               <a
                 key={corte.name}
                 href={corte.path}
-                className='block px-4 py-2 text-sm
-               text-gray-700 dark:text-gray-100 hover:bg-gray-100 
-               hover:text-gray-900'
+                className='px-4 py-2 text-sm
+               text-gray-700 dark:text-gray-100 hover:bg-[#c068ff86]'
                 role='menuitem'
               >
                 {corte.name}
