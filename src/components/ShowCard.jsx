@@ -18,7 +18,6 @@ function ShowCard(props) {
         <input
           type='text'
           name='url'
-          contentEditable
           defaultValue={props.url.split("https://")[1]}
           className='text-gray-900 border-gray-300 w-max
              rounded-sm focus:outline-none focus:ring-violet-500 focus:border-violet-500 sm:text-sm'
@@ -28,8 +27,8 @@ function ShowCard(props) {
         <summary>Descripción</summary>
         <p>
           <strong>?type= </strong>
-          especifica los tipos de arcanos.
-          <i>(en éste caso no se está usando)</i>
+          especifica los tipos de arcanos
+          <i> (en éste caso no se está usando).</i>
         </p>
         <p>
           <strong>?n= </strong>
@@ -42,8 +41,11 @@ function ShowCard(props) {
             border border-transparent shadow-sm text-sm font-medium rounded-md
              text-white bg-violet-600 hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-violet-500'
       >
-        {isCopied ? "Copied!" : "Copy to clipboard"}
+        {isCopied ? "Copiado" : "Copiar endpoint"}
       </button>
+      <span className='px-2 text-md bg-gray-600 rounded-md'>
+        Cantidad de cartas: {props.numOfCards}
+      </span>
     </section>
   );
 }
