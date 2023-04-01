@@ -1,33 +1,40 @@
-import React, { Suspense } from "react";
+import React from "react";
 import Footer from "./components/Footer";
-import Loading from "./components/Loading";
 import Navbar from "./components/Navbar/Navbar";
 import ShowCard from "./components/ShowCard";
 import TarotCard from "./components/TarotCard";
-import { fetchData } from "./helper/fetchData";
+import useStore from "./store/store";
 
-const fetchUrl = `https://tarotapispanish.onrender.com/api/v1/random?&n=9`;
-
-const tarotSearch = fetchData(fetchUrl);
 function App() {
-  const data = tarotSearch.read();
-
+  const { data, fetchData, endpointUrl } = useStore();
+  React.useEffect(() => {
+    fetchData("https://tarotapispanish.onrender.com/api/v1/random?&n=9");
+  }, [fetchData]);
   return (
     <div className='App'>
       <Navbar />
-      <ShowCard url={fetchUrl} />
+      <ShowCard
+        url={endpointUrl}
+        numOfCards={data.nhits ? data.nhits : data.length}
+      />
       <main
         id='Container'
         className='grid pb-8 grid-flow-row md:grid-cols-3 sm:grid-cols-1 gap-3 justify-items-center bg-indigo-950'
       >
-        <Suspense fallback={<Loading />}>
-          {data.cards.map((card) => (
+        {data.cards &&
+          data.cards.map((card) => (
             <TarotCard
               key={card.name_short + "carta" + card.value}
               card={card}
             />
           ))}
-        </Suspense>
+        {!data.cards &&
+          data.map((card) => (
+            <TarotCard
+              key={card.name_short + "carta" + card.value}
+              card={card}
+            />
+          ))}
       </main>
       <Footer />
     </div>
