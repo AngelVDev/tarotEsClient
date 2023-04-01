@@ -29,7 +29,7 @@ function ShowCard(props) {
         <p>
           <strong>?type= </strong>
           especifica los tipos de arcanos.
-          <italic>(en éste caso no se está usando)</italic>
+          <i>(en éste caso no se está usando)</i>
         </p>
         <p>
           <strong>?n= </strong>
