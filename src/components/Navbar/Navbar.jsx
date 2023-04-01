@@ -1,9 +1,16 @@
 import React from "react";
+import useStore from "../../store/store";
 import Corte from "./Corte";
 import Palos from "./Palos";
 import Searchbar from "./Searchbar";
 
+const arcanosMayoresPath =
+  "https://tarotapispanish.onrender.com/api/v1/cards/type/mayor";
+const arcanosMenoresPath =
+  "https://tarotapispanish.onrender.com/api/v1/cards/type/menor";
+
 function Navbar() {
+  const { fetchData } = useStore();
   return (
     <header className='p-4 dark:bg-gray-800 dark:text-gray-100'>
       <div className='container flex justify-between h-16 mx-auto'>
@@ -11,22 +18,20 @@ function Navbar() {
           <Corte />
           <Palos />
           <li className='flex'>
-            <a
-              rel='noopener noreferrer'
-              href='/'
+            <button
+              onClick={() => fetchData(arcanosMayoresPath)}
               className='flex items-center px-4 -mb-1 border-b-2 dark:border-transparent'
             >
               Arcanos mayores
-            </a>
+            </button>
           </li>
           <li className='flex'>
-            <a
-              rel='noopener noreferrer'
-              href='/'
+            <button
+              onClick={() => fetchData(arcanosMenoresPath)}
               className='flex items-center px-4 -mb-1 border-b-2 dark:border-transparent'
             >
               Arcanos menores
-            </a>
+            </button>
           </li>
         </ul>
         <a
