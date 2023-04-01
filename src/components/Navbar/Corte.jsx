@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import DownArrow from "../../assets/DownArrow";
+import useStore from "../../store/store";
 
 const cortePath = "https://tarotapispanish.onrender.com/api/v1/cards/courts";
 const corte = [
@@ -13,6 +14,7 @@ const corte = [
 ];
 function Corte() {
   const [showMenu, setShowMenu] = useState(false);
+  const { fetchData } = useStore();
 
   return (
     <div className='relative'>
@@ -23,6 +25,7 @@ function Corte() {
         h-16 px-4 text-sm font-medium text-gray-700 dark:text-gray-100 
         bg-transparent rounded-md hover:bg-[#c068ff86]'
         onMouseEnter={() => setShowMenu(true)}
+        onClick={() => fetchData(cortePath)}
       >
         Corte
         <DownArrow />
@@ -42,15 +45,15 @@ function Corte() {
             aria-labelledby='options-menu'
           >
             {corte.map((corte) => (
-              <a
+              <button
                 key={corte.name}
-                href={corte.path}
                 className='px-4 py-2 text-sm
                text-gray-700 dark:text-gray-100 hover:bg-[#c068ff86]'
                 role='menuitem'
+                onClick={() => fetchData(corte.path)}
               >
                 {corte.name}
-              </a>
+              </button>
             ))}
           </li>
         </ul>
