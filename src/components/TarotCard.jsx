@@ -12,7 +12,9 @@ function TarotCard(data) {
         src={card.image}
         alt={card.name + "carta" + card.value}
       />
-      <header className='text-center text-xl'>{card.name}</header>
+      <header className='text-center text-xl'>
+        {card.name === "La M" ? "La Muerte" : card.name}
+      </header>
       <p>Significado: {card.meaning_up}</p>
       <p>Significado al revés: {card.meaning_rev}</p>
       <section>
