@@ -12,7 +12,7 @@ const arcanosMenoresPath =
 function Navbar() {
   const { fetchData } = useStore();
   return (
-    <header className='p-4 dark:bg-gray-800 dark:text-gray-100'>
+    <header className=' bg-gradient-to-b from-indigo-200  to-white p-4 dark:bg-gray-800 dark:text-gray-100'>
       <div className='container flex justify-between h-16 mx-auto'>
         <ul className='items-stretch hidden space-x-3 lg:flex'>
           <Corte />
@@ -20,7 +20,8 @@ function Navbar() {
           <li className='flex'>
             <button
               onClick={() => fetchData(arcanosMayoresPath)}
-              className='flex items-center px-4 -mb-1 border-b-2 dark:border-transparent'
+              className='flex hover:bg-[#c068ff86] transition-all
+              rounded-md items-center px-4 -mb-1 border-b-2 dark:border-transparent'
             >
               Arcanos mayores
             </button>
@@ -28,7 +29,8 @@ function Navbar() {
           <li className='flex'>
             <button
               onClick={() => fetchData(arcanosMenoresPath)}
-              className='flex items-center px-4 -mb-1 border-b-2 dark:border-transparent'
+              className='flex hover:bg-[#c068ff86] transition-all
+              rounded-md items-center px-4 -mb-1 border-b-2 dark:border-transparent'
             >
               Arcanos menores
             </button>
