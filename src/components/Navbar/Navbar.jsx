@@ -12,7 +12,10 @@ const arcanosMenoresPath =
 function Navbar() {
   const { fetchData } = useStore();
   return (
-    <header className=' bg-gradient-to-b from-indigo-200  to-white p-4 dark:bg-gray-800 dark:text-gray-100'>
+    <header
+      className='light:bg-gradient-to-b from-indigo-200  to-neutral-100 p-4 
+    dark:bg-gray-800 dark:text-gray-100'
+    >
       <div className='container flex justify-between h-16 mx-auto'>
         <ul className='items-stretch hidden space-x-3 lg:flex'>
           <Corte />

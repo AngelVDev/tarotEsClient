@@ -4,7 +4,7 @@ import Logo from "../assets/Logo";
 function Footer() {
   return (
     <footer
-      className='bg-gradient-to-b from-white  to-indigo-200
+      className='light:bg-gradient-to-b from-neutral-100  to-indigo-200
      px-4 py-8 dark:bg-gray-800 dark:text-gray-400'
     >
       <div className='container flex flex-wrap items-center justify-center mx-auto space-y-4 sm:justify-between sm:space-y-0'>
