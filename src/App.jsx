@@ -19,7 +19,7 @@ function App() {
       />
       <main
         id='Container'
-        className='grid pb-8 bg-slate-350 grid-flow-row md:grid-cols-3 sm:grid-cols-1 gap-3 justify-items-center dark:bg-indigo-950'
+        className='grid pb-8 bg-neutral-100 grid-flow-row md:grid-cols-3 sm:grid-cols-1 gap-3 justify-items-center dark:bg-indigo-950'
       >
         {data.cards &&
           data.cards.map((card) => (
