@@ -11,10 +11,12 @@ function ShowCard(props) {
   };
 
   return (
-    <section className='flex flex-col items-center space-y-2 h-fit text-gray-100 bg-gray-700 p-4'>
+    <section className='flex flex-col items-center space-y-2 h-fit dark:text-gray-100 dark:bg-gray-700 p-4'>
       <legend className='text-base font-medium'>Endpoint</legend>
       <fieldset className='space-x-1'>
-        <span className='px-2 text-sm bg-gray-600 rounded-l-md'>https://</span>
+        <span className='px-2 text-sm bg-indigo-100 dark:bg-gray-600 rounded-l-md'>
+          https://
+        </span>
         <input
           type='text'
           name='url'
@@ -38,12 +40,13 @@ function ShowCard(props) {
       <button
         onClick={copyToClipboard}
         className='p-2 
-            border border-transparent shadow-sm text-sm font-medium rounded-md
-             text-white bg-violet-600 hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-violet-500'
+            border border-transparent shadow-sm text-sm font-medium rounded-md transition-all
+            dark:text-white dark:bg-violet-600 bg-indigo-100
+            dark:hover:bg-violet-700 hover:bg-violet-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-violet-500'
       >
         {isCopied ? "Copiado" : "Copiar endpoint"}
       </button>
-      <span className='px-2 text-md bg-gray-600 rounded-md'>
+      <span className='px-2 text-md bg-stone-200 dark:bg-gray-600 rounded-md'>
         Cantidad de cartas: {props.numOfCards}
       </span>
     </section>
