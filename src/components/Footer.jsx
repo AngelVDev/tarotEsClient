@@ -4,8 +4,8 @@ import Logo from "../assets/Logo";
 function Footer() {
   return (
     <footer
-      className='light:bg-gradient-to-b from-neutral-100  to-indigo-200
-     px-4 py-8 dark:bg-gray-800 dark:text-gray-400'
+      className='bg-stone-100
+      dark:bg-gradient-to-b from-indigo-950 to-gray-900 dark:text-gray-400 px-4 py-8'
     >
       <div className='container flex flex-wrap items-center justify-center mx-auto space-y-4 sm:justify-between sm:space-y-0'>
         <div className='flex flex-row pr-3 space-x-4 sm:space-x-8'>
