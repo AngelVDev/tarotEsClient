@@ -11,7 +11,7 @@ function ShowCard(props) {
   };
 
   return (
-    <section className='flex flex-col items-center space-y-2 h-fit dark:text-gray-100 dark:bg-gray-700 p-4'>
+    <section className='flex flex-col bg-neutral-100 items-center space-y-2 h-fit dark:text-gray-100 dark:bg-gray-700 p-4'>
       <legend className='text-base font-medium'>Endpoint</legend>
       <fieldset className='space-x-1'>
         <span className='px-2 text-sm bg-indigo-100 dark:bg-gray-600 rounded-l-md'>
