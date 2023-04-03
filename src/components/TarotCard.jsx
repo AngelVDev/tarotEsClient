@@ -26,29 +26,29 @@ function TarotCard(data) {
       <p>Significado: {card.meaning_up}</p>
       <p>Significado al revés: {card.meaning_rev}</p>
       <section>
-        <details className='py-2 hover:bg-slate-300 cursor-pointer rounded-md content-around'>
+        <details className='py-2 hover:bg-slate-300 dark:hover:bg-[#c068ff86] cursor-pointer rounded-md content-around'>
           <summary>En el trabajo:</summary>
-          <p>{card.trabajo}</p>
+          <p className='p-2'>{card.trabajo}</p>
         </details>
         <details className='py-2 content-around dark:hover:bg-[#c068ff86] hover:bg-slate-300 rounded-md cursor-pointer'>
           <summary>En el amor: </summary>
-          <p>{card.amor}</p>
+          <p className='p-2'>{card.amor}</p>
         </details>
         <details className='py-2 content-around dark:hover:bg-[#c068ff86] hover:bg-slate-300 rounded-md cursor-pointer'>
           <summary>En las finanzas: </summary>
-          <p>{card.finanzas}</p>
+          <p className='p-2'>{card.finanzas}</p>
         </details>
         <details className='py-2 content-around dark:hover:bg-[#c068ff86] hover:bg-slate-300 rounded-md cursor-pointer'>
           <summary>En la espiritualidad: </summary>
-          <p>{card.espiritualidad}</p>
+          <p className='p-2'>{card.espiritualidad}</p>
         </details>
         <details className='py-2 content-around dark:hover:bg-[#c068ff86] hover:bg-slate-300 rounded-md cursor-pointer'>
           <summary>En la salud: </summary>
-          <p>{card.salud}</p>
+          <p className='p-2'>{card.salud}</p>
         </details>
         <details className='py-2 content-around dark:hover:bg-[#c068ff86] hover:bg-slate-300 rounded-md cursor-pointer'>
           <summary>Descripción de imagen: </summary>
-          <p>{card.desc}</p>
+          <p className='p-2'>{card.desc}</p>
         </details>
       </section>
     </article>
