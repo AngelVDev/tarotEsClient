@@ -1,10 +1,17 @@
 import React from "react";
+import Loading from "./Loading"
 
 function TarotCard(data) {
   const card = data.card;
+  if(!card)return(
+  <>
+  <Loading/>
+  </>
+  );
   return (
     <article
-      className='max-w-xl mt-4 pt-4 px-4 pb-2 content-around h-full rounded-md shadow-md 
+      className='max-w-xl mt-4 pt-4 px-4 pb-2 content-around h-fit rounded-md shadow-md 
+       text-slate-900 bg-slate-200
         dark:bg-gray-900 dark:text-gray-50 w-4/6 text-xs space-y-2'
     >
       <img
