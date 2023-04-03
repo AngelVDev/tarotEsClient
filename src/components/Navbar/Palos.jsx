@@ -22,7 +22,7 @@ function Palos() {
       <button
         id='dropdownHoverButton'
         type='button'
-        className='inline-flex items-center justify-center w-full 
+        className='inline-flex items-center justify-center w-full transition-all
         h-16 px-4 text-sm font-medium text-gray-700 dark:text-gray-100 
         bg-transparent rounded-md hover:bg-[#c068ff86]'
         onMouseEnter={() => setShowMenu(true)}
