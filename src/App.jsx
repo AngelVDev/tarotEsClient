@@ -8,18 +8,20 @@ import useStore from "./store/store";
 function App() {
   const { data, fetchData, endpointUrl } = useStore();
   React.useEffect(() => {
-    fetchData("https://tarotapispanish.onrender.com/api/v1/random?&n=9");
+    fetchData("https://tarot-api-es.vercel.app/api/v1/random?&n=9");
   }, [fetchData]);
   return (
     <div className='App'>
       <Navbar />
       <ShowCard
+        // data={data}
         url={endpointUrl}
         numOfCards={data.nhits ? data.nhits : data.length}
       />
       <main
         id='Container'
-        className='grid pb-8 bg-neutral-100 grid-flow-row md:grid-cols-3 sm:grid-cols-1 gap-3 justify-items-center dark:bg-indigo-950'
+        className='grid pb-8 bg-neutral-100 grid-flow-row md:grid-cols-3 sm:grid-cols-1 
+        gap-3 justify-items-center dark:bg-indigo-950'
       >
         {data.cards &&
           data.cards.map((card) => (

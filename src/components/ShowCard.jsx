@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from "react";
+// import card from "../assets/jsons/card.json";
 
 function ShowCard(props) {
   const [isCopied, setIsCopied] = useState(false);
@@ -52,6 +53,9 @@ function ShowCard(props) {
       <span className='px-2 text-md bg-stone-200 dark:bg-gray-600 rounded-md'>
         Cantidad de cartas: {props.numOfCards}
       </span>
+      {/* <pre className='overflow-y-scroll h-[200px] sm:1/2 md:w-2/3 sm:w-3/4 whitespace-pre-wrap p-4 bg-slate-900'>
+        <code className=' text-red-300'>{JSON.stringify(props.data)}</code>
+      </pre> */}
     </section>
   );
 }
