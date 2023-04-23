@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import DownArrow from "../../assets/DownArrow";
 import useStore from "../../store/store";
+import { cortePath } from "../../helper/baseUrl";
 
-const cortePath = "https://tarotapispanish.onrender.com/api/v1/cards/courts";
 const corte = [
   {
     name: "Reinas",

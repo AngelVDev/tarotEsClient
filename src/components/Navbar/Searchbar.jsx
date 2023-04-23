@@ -1,7 +1,6 @@
 import React from "react";
 import useStore from "../../store/store";
-
-const baseURL = "https://tarotapispanish.onrender.com/api/v1/cards";
+import { baseURL } from "../../helper/baseUrl";
 
 function Searchbar() {
   const [search, setSearch] = React.useState("");

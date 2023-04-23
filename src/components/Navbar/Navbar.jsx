@@ -3,11 +3,7 @@ import useStore from "../../store/store";
 import Corte from "./Corte";
 import Palos from "./Palos";
 import Searchbar from "./Searchbar";
-
-const arcanosMayoresPath =
-  "https://tarotapispanish.onrender.com/api/v1/cards/type/mayor";
-const arcanosMenoresPath =
-  "https://tarotapispanish.onrender.com/api/v1/cards/type/menor";
+import { arcanosMayoresPath, arcanosMenoresPath } from "../../helper/baseUrl";
 
 function Navbar() {
   const { fetchData } = useStore();

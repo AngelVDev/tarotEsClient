@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import DownArrow from "../../assets/DownArrow";
 import useStore from "../../store/store";
+import { palosPath } from "../../helper/baseUrl";
 
-const palosPath = "https://tarotapispanish.onrender.com/api/v1/cards/suits";
 const palos = [
   {
     name: "Oros",
