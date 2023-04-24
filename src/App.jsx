@@ -4,9 +4,11 @@ import Navbar from "./components/Navbar/Navbar";
 import ShowCard from "./components/ShowCard";
 import TarotCard from "./components/TarotCard";
 import useStore from "./store/store";
+import Nothing from "./components/Nothing";
 
 function App() {
   const { data, fetchData, endpointUrl } = useStore();
+  const nothing = (data.nhits === 0) | (data.length === 0);
   React.useEffect(() => {
     fetchData("https://tarot-api-es.vercel.app/api/v1/random?&n=9");
   }, [fetchData]);
@@ -37,6 +39,7 @@ function App() {
               card={card}
             />
           ))}
+        {nothing && <Nothing />}
       </main>
       <Footer />
     </div>
