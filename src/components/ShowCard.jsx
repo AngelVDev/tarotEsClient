@@ -1,16 +1,17 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from "react";
-// import card from "../assets/jsons/card.json";
 
 function ShowCard(props) {
   const [isCopied, setIsCopied] = useState(false);
-
+  const endpoint = props.url;
   const copyToClipboard = () => {
-    // eslint-disable-next-line react/prop-types
-    navigator.clipboard.writeText(props.url);
+    navigator.clipboard.writeText(endpoint);
     setIsCopied(true);
   };
 
+  React.useEffect(() => {
+    setIsCopied(false);
+  }, [endpoint]);
   return (
     <section
       className='flex flex-col bg-neutral-100 items-center space-y-2 h-fit dark:text-gray-100 dark:bg-gradient-to-b
@@ -25,7 +26,7 @@ function ShowCard(props) {
           type='text'
           name='url'
           defaultValue={props.url.split("https://")[1]}
-          className='text-gray-900 border-gray-300 w-max
+          className='text-gray-900 border-gray-300 min-w-max 
              rounded-sm focus:outline-none focus:ring-violet-500 focus:border-violet-500 sm:text-sm'
         />
       </fieldset>
