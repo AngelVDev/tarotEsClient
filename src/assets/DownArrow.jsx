@@ -3,7 +3,7 @@ import React from "react";
 function DownArrow() {
   return (
     <svg
-      className='w-4 h-4 ml-2'
+      className='w-4 h-4'
       aria-hidden='true'
       fill='none'
       stroke='currentColor'
