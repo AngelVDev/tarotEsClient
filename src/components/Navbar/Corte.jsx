@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import DownArrow from "../../assets/DownArrow";
 import useStore from "../../store/store";
 import { cortePath } from "../../helper/baseUrl";
+import CloseCross from "../../assets/CloseCross";
 
 const corte = [
   {
@@ -24,17 +25,19 @@ function Corte() {
         className='inline-flex items-center justify-center w-full transition-all
         h-16 px-4 text-sm font-medium text-gray-700 dark:text-gray-100 
         bg-transparent rounded-md hover:bg-[#c068ff86]'
-        onMouseEnter={() => setShowMenu(true)}
-        onClick={() => fetchData(cortePath)}
+        onDoubleClick={() => fetchData(cortePath)}
       >
         Corte
-        <DownArrow />
+        <span
+          className='inline-flex w-full ml-2 p-3 hover:bg-[#3e1e5586] hover:rounded-l transition-all'
+          onClick={() => setShowMenu(!showMenu)}
+        >
+          {showMenu === false ? <DownArrow /> : <CloseCross />}
+        </span>
       </button>
       {showMenu && (
         <ul
           id='dropdownHover'
-          onMouseDown={() => setShowMenu(true)}
-          onMouseLeave={() => setTimeout(() => setShowMenu(false), 50)}
           className='absolute transition-all z-10 p-1 mt-2 overflow-hidden 
           bg-white rounded-md shadow-lg dark:bg-gray-800 ring-1 ring-black ring-opacity-5'
         >
