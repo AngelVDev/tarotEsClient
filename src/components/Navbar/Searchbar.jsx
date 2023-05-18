@@ -12,7 +12,11 @@ function Searchbar() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    tarotSearch(`${query}=${search}`);
+    if (query && search) {
+      tarotSearch(`${query}=${search}`);
+    } else {
+      return;
+    }
   };
   return (
     <div className='flex items-center md:space-x-4'>
