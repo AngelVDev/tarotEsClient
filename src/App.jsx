@@ -5,20 +5,22 @@ import ShowCard from "./components/ShowCard";
 import TarotCard from "./components/TarotCard";
 import useStore from "./store/store";
 import Nothing from "./components/Nothing";
+import { descriptor } from "./helper/descriptor";
+import { randomUrl9 } from "./helper/baseUrl";
 
 function App() {
   const { data, fetchData, endpointUrl } = useStore();
-  const nothing = (data.nhits === 0) | (data.length === 0);
   React.useEffect(() => {
-    fetchData("https://tarot-api-es.vercel.app/api/v1/random?&n=9");
+    fetchData(randomUrl9);
   }, [fetchData]);
+
   return (
     <div className='App'>
       <Navbar />
       <ShowCard
-        // data={data}
         url={endpointUrl}
-        numOfCards={data.nhits ? data.nhits : data.length}
+        numOfCards={data.nhits}
+        description={descriptor(endpointUrl)}
       />
       <main
         id='Container'
@@ -32,14 +34,7 @@ function App() {
               card={card}
             />
           ))}
-        {!data.cards &&
-          data.map((card) => (
-            <TarotCard
-              key={card.name_short + "carta" + card.value}
-              card={card}
-            />
-          ))}
-        {nothing && <Nothing />}
+        {data.nhits === 0 ? <Nothing /> : null}
       </main>
       <Footer />
     </div>
