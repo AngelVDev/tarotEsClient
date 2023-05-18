@@ -4,7 +4,7 @@ import { baseURL } from "../../helper/baseUrl";
 
 function Searchbar() {
   const [search, setSearch] = React.useState("");
-  const [query, setQuery] = React.useState("");
+  const [query, setQuery] = React.useState("q");
 
   const { fetchData } = useStore();
 
