@@ -1,14 +1,8 @@
 import React from "react";
-import Loading from "./Loading";
 
 function TarotCard(data) {
   const card = data.card;
-  if (!card)
-    return (
-      <>
-        <Loading />
-      </>
-    );
+
   return (
     <article
       className='max-w-xl mt-4 pt-4 px-4 pb-2 content-around h-fit rounded-md shadow-md 
