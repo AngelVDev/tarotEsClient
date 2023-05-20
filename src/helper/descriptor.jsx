@@ -49,7 +49,7 @@ export const descriptor = (endpoint) => {
   if (endpoint.includes(palosPath)) {
     return (
       <>
-        <strong>/palos/:palo </strong>
+        <strong>/suits/:palo </strong>
         devuelve todos los arcanos de la corte del palo indicado.
       </>
     );
