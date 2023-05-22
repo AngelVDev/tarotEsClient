@@ -4,15 +4,30 @@ import Corte from "./Corte";
 import Palos from "./Palos";
 import Searchbar from "./Searchbar";
 import { arcanosMayoresPath, arcanosMenoresPath } from "../../helper/baseUrl";
+import Burger from "./Burger";
+import SvgLines from "../../assets/SvgLines";
 
 function Navbar() {
   const { fetchData } = useStore();
+  const [nav, setNav] = React.useState(false);
+  const handleClick = () => setNav(!nav);
   return (
     <nav
-      className='bg-stone-100 dark:bg-gray-800 dark:text-gray-100 p-4
+      className='bg-stone-100 dark:bg-gray-800 md:flex-1 dark:text-gray-100 p-4
       '
     >
-      <div className='container md:flex justify-between h-16 mx-auto'>
+      <button onClick={handleClick} className='md:hidden z-10'>
+        {!nav ? <SvgLines /> : <Burger nav={nav} />}
+      </button>
+      <a
+        rel='noopener noreferrer'
+        href='/'
+        aria-label='Back to homepage'
+        className='sm:flex md:hidden px-16 ml-8 bg-violet-900 rounded-xl text-slate-200'
+      >
+        <strong>Tarot API ES</strong>
+      </a>
+      <div className='container hidden md:flex justify-between h-16 mx-auto'>
         <ul className='items-stretch hidden space-x-3 lg:flex'>
           <Corte />
           <Palos />
@@ -39,7 +54,7 @@ function Navbar() {
           rel='noopener noreferrer'
           href='/'
           aria-label='Back to homepage'
-          className='flex hover:bg-[#c068ff86] transition-all
+          className='md:flex hover:bg-[#c068ff86] transition-all
               rounded-md items-center px-4 -mb-1 border-y-2 dark:border-y-amber-400'
         >
           Reiniciar

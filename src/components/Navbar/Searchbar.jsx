@@ -19,7 +19,7 @@ function Searchbar() {
     }
   };
   return (
-    <div className='flex items-center md:space-x-4'>
+    <div className='md:flex hidden items-center space-x-4'>
       <form onSubmit={handleSubmit} className='relative'>
         <select
           className='rounded-md p-2 mr-2 hover:bg-[#c068ff86] transition-all
